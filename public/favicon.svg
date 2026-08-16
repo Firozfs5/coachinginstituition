@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="crestGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f2942" />
+      <stop offset="100%" stop-color="#1e446d" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Shield Outline -->
+  <path d="M50 5 L88 20 C88 60 50 92 50 92 C50 92 12 60 12 20 Z" fill="url(#crestGrad)" stroke="url(#goldGrad)" stroke-width="4" />
+  
+  <!-- Inner Shield Accent -->
+  <path d="M50 12 L80 24 C80 56 50 82 50 82 C50 82 20 56 20 24 Z" fill="#081726" opacity="0.6" />
+  
+  <!-- Torch / Flame (Symbol of Knowledge) -->
+  <path d="M50 20 C54 28 58 32 50 42 C42 32 46 28 50 20 Z" fill="url(#redGrad)" />
+  <circle cx="50" cy="30" r="3" fill="#fef08a" />
+  
+  <!-- Open Book -->
+  <path d="M30 52 C38 48 46 50 50 54 C54 50 62 48 70 52 C70 64 54 62 50 68 C46 62 30 64 30 52 Z" fill="#ffffff" />
+  <path d="M50 54 L50 68" stroke="#0f2942" stroke-width="1.5" />
+  
+  <!-- Star -->
+  <polygon points="50,72 52,77 57,77 53,80 55,85 50,82 45,85 47,80 43,77 48,77" fill="url(#goldGrad)" />
+</svg>

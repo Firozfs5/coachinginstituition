@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased overflow-x-hidden;
+    font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer utilities {
+  /* Subtle Academic Grid & Dot Backgrounds */
+  .bg-grid-pattern {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(14, 42, 90, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(14, 42, 90, 0.05) 1px, transparent 1px);
+  }
+  
+  .bg-grid-pattern-dark {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  }
+
+  .bg-dots-pattern {
+    background-image: radial-gradient(rgba(14, 42, 90, 0.12) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .bg-dots-pattern-dark {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Academic Badge Gradients */
+  .academic-gradient {
+    background: linear-gradient(135deg, #08132e 0%, #13285c 50%, #1e3a8a 100%);
+  }
+
+  .crimson-gradient {
+    background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+  }
+
+  /* Explicit Core Colors & Contrast Enhancements */
+  .bg-navy-950 { background-color: #061322; }
+  .bg-navy-900 { background-color: #0b1a2c; }
+  .bg-navy-800 { background-color: #132c48; }
+  .bg-navy-700 { background-color: #1e446d; }
+  .bg-navy-50 { background-color: #f0f5fa; }
+  .bg-navy-100 { background-color: #dde9f4; }
+  
+  .bg-crimson-600 { background-color: #dc2626; }
+  .bg-crimson-700 { background-color: #b91c1c; }
+  .bg-crimson-500 { background-color: #ef4444; }
+  .bg-crimson-50 { background-color: #fef2f2; }
+
+  .text-navy-950 { color: #061322; }
+  .text-navy-900 { color: #0b1a2c; }
+  .text-navy-800 { color: #132c48; }
+  .text-crimson-600 { color: #dc2626; }
+  .text-crimson-700 { color: #b91c1c; }
+
+  .border-navy-800 { border-color: #132c48; }
+  .border-navy-700 { border-color: #1e446d; }
+  .border-crimson-500 { border-color: #ef4444; }
+  .border-crimson-600 { border-color: #dc2626; }
+
+  /* Glassmorphism light touches */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-dark {
+    background: rgba(8, 19, 46, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+/* Hide scrollbar for tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ===== Mobile Horizontal Scroll Cards ===== */
+.mobile-scroll-cards {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  /* Hide scrollbar */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.mobile-scroll-cards::-webkit-scrollbar {
+  display: none;
+}
+.mobile-scroll-cards > * {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+}
+
+/* At md+ breakpoint, revert to grid */
+@media (min-width: 768px) {
+  .mobile-scroll-cards {
+    display: grid;
+    overflow-x: visible;
+    scroll-snap-type: none;
+    padding-bottom: 0;
+  }
+  .mobile-scroll-cards > * {
+    scroll-snap-align: unset;
+    flex-shrink: unset;
+    min-width: 0 !important;
+    width: auto !important;
+  }
+}
+
+/* ===== Marquee Animation ===== */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+/* ===== Slide-Up Animation ===== */
+@keyframes slide-up {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up {
+  animation: slide-up 0.25s ease-out;
+}
+
+/* ===== Fade-In Animation ===== */
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(-4px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+/* ===== Body scroll lock (when mobile menu is open) ===== */
+body.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* ===== Safe area for notched phones ===== */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* ===== Mobile bottom bar spacer ===== */
+@media (max-width: 639px) {
+  .mobile-bottom-spacer {
+    padding-bottom: 5rem; /* space for fixed mobile action bar */
+  }
+}

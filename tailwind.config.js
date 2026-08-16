@@ -1,0 +1,111 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        navy: {
+          50: '#f0f5fa',
+          100: '#dde9f4',
+          200: '#c0d6eb',
+          300: '#94bcdf',
+          400: '#619ccf',
+          500: '#3d80bf',
+          600: '#2c66a4',
+          700: '#1e446d',
+          800: '#132c48',
+          900: '#0b1a2c',
+          950: '#061322',
+        },
+        crimson: {
+          50: '#fef2f2',
+          100: '#fee2e2',
+          200: '#fecaca',
+          300: '#fca5a5',
+          400: '#f87171',
+          500: '#ef4444',
+          600: '#dc2626',
+          700: '#b91c1c',
+          800: '#991b1b',
+          900: '#7f1d1d',
+          950: '#450a0a',
+        },
+        gold: {
+          50: '#fffbeb',
+          100: '#fef3c7',
+          200: '#fde68a',
+          300: '#fcd34d',
+          400: '#fbbf24',
+          500: '#f59e0b',
+          600: '#d97706',
+          700: '#b45309',
+          800: '#92400e',
+          900: '#78350f',
+        },
+        brand: {
+          navy: {
+            50: '#f0f5fa',
+            100: '#dde9f4',
+            200: '#c0d6eb',
+            300: '#94bcdf',
+            400: '#619ccf',
+            500: '#3d80bf',
+            600: '#2c66a4',
+            700: '#1e446d',
+            800: '#132c48',
+            900: '#0b1a2c',
+            950: '#061322',
+          },
+          red: {
+            50: '#fef2f2',
+            100: '#fee2e2',
+            200: '#fecaca',
+            300: '#fca5a5',
+            400: '#f87171',
+            500: '#ef4444',
+            600: '#dc2626',
+            700: '#b91c1c',
+            800: '#991b1b',
+            900: '#7f1d1d',
+          },
+          gold: {
+            50: '#fffbeb',
+            100: '#fef3c7',
+            200: '#fde68a',
+            300: '#fcd34d',
+            400: '#fbbf24',
+            500: '#f59e0b',
+            600: '#d97706',
+            700: '#b45309',
+            800: '#92400e',
+            900: '#78350f',
+          },
+          slate: {
+            850: '#151f30',
+            900: '#0f172a',
+            950: '#0a0f1d',
+          }
+        }
+      },
+      fontFamily: {
+        heading: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+        kannada: ['Noto Sans Kannada', 'Plus Jakarta Sans', 'sans-serif'],
+        serif: ['Merriweather', 'serif'],
+      },
+      boxShadow: {
+        'card': '0 4px 20px -2px rgba(15, 41, 66, 0.08), 0 2px 6px -1px rgba(15, 41, 66, 0.04)',
+        'card-hover': '0 12px 30px -4px rgba(15, 41, 66, 0.15), 0 4px 12px -2px rgba(15, 41, 66, 0.08)',
+        'elevated': '0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2)',
+        'premium': '0 20px 40px -15px rgba(15, 41, 66, 0.25)',
+      },
+      backgroundImage: {
+        'academic-pattern': "radial-gradient(rgba(15, 41, 66, 0.05) 1px, transparent 1px)",
+      }
+    },
+  },
+  plugins: [],
+}
