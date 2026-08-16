@@ -19,7 +19,7 @@ export const PopularCourses = () => {
         {/* Course Cards Grid — horizontal scroll on mobile, grid on md+ */}
         <div className="mobile-scroll-cards md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {COURSES_DATA.slice(0, 6).map((course) => (
-            <div key={course.id} className="min-w-[85vw] sm:min-w-[340px] md:min-w-0">
+            <div key={course.id} className="min-w-0">
               <CourseCard course={course} />
             </div>
           ))}

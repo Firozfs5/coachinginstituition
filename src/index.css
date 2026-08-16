@@ -123,10 +123,13 @@
 .mobile-scroll-cards {
   display: flex;
   overflow-x: auto;
+  overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
+  scroll-padding-inline: 1rem;
   -webkit-overflow-scrolling: touch;
   gap: 1rem;
-  padding-bottom: 0.5rem;
+  margin-inline: -1rem;
+  padding: 0.25rem 1rem 0.9rem;
   /* Hide scrollbar */
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -135,8 +138,26 @@
   display: none;
 }
 .mobile-scroll-cards > * {
-  scroll-snap-align: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   flex-shrink: 0;
+  width: min(84vw, 22rem);
+}
+
+.mobile-scroll-cards > * > * {
+  height: 100%;
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .mobile-scroll-cards {
+    margin-inline: -1.5rem;
+    padding-inline: 1.5rem;
+    scroll-padding-inline: 1.5rem;
+  }
+
+  .mobile-scroll-cards > * {
+    width: min(44vw, 21rem);
+  }
 }
 
 /* At md+ breakpoint, revert to grid */
@@ -145,10 +166,12 @@
     display: grid;
     overflow-x: visible;
     scroll-snap-type: none;
-    padding-bottom: 0;
+    margin-inline: 0;
+    padding: 0;
   }
   .mobile-scroll-cards > * {
     scroll-snap-align: unset;
+    scroll-snap-stop: normal;
     flex-shrink: unset;
     min-width: 0 !important;
     width: auto !important;

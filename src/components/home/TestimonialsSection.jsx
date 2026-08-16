@@ -22,7 +22,7 @@ export const TestimonialsSection = () => {
             const location = item.location || item.hometown;
 
             return (
-              <div key={item.id} className="min-w-[85vw] sm:min-w-[320px] md:min-w-0">
+              <div key={item.id} className="min-w-0">
                 <div
                   className="p-6 rounded-2xl bg-slate-50 border border-slate-200/90 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between h-full"
                 >

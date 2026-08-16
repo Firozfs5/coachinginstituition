@@ -86,7 +86,7 @@ export const ExamCategoriesGrid = () => {
         {/* Exam Cards Grid — horizontal scroll on mobile, grid on md+ */}
         <div className="mobile-scroll-cards md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredExams.slice(0, 9).map((exam) => (
-            <div key={exam.id} className="min-w-[85vw] sm:min-w-[340px] md:min-w-0">
+            <div key={exam.id} className="min-w-0">
               <ExamCard exam={exam} />
             </div>
           ))}

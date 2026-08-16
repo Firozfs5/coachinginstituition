@@ -21,15 +21,15 @@ export const ExamCard = ({ exam }) => {
   const courseLink = exam.coachingCourseId || exam.recommendedCourse ? `/courses/${exam.coachingCourseId || exam.recommendedCourse}` : '/courses';
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:-translate-y-1">
-      <div className="p-6">
+    <div className="bg-white rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:-translate-y-1 h-full">
+      <div className="p-5 sm:p-6">
         {/* Authority / Category Tag */}
-        <div className="flex items-center justify-between gap-2 mb-3">
-          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-[11px] font-bold bg-navy-50 text-navy-800 border border-navy-100">
-            <Building2 className="w-3 h-3 text-navy-600" />
-            {authority}
+        <div className="flex items-center justify-between gap-2 mb-3 min-w-0">
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-[11px] font-bold bg-navy-50 text-navy-800 border border-navy-100 min-w-0 max-w-[68%]">
+            <Building2 className="w-3 h-3 text-navy-600 shrink-0" />
+            <span className="truncate">{authority}</span>
           </span>
-          <span className="text-[11px] font-semibold text-slate-400">
+          <span className="text-[11px] font-semibold text-slate-400 shrink-0">
             {stagesCount} Stages
           </span>
         </div>
@@ -85,10 +85,10 @@ export const ExamCard = ({ exam }) => {
       </div>
 
       {/* Action Footer */}
-      <div className="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between gap-2">
+      <div className="p-4 bg-slate-50 border-t border-slate-100 flex flex-col min-[380px]:flex-row min-[380px]:items-center justify-between gap-3">
         <Link
           to={courseLink}
-          className="inline-flex items-center text-xs font-bold text-navy-950 hover:text-crimson-600 transition-colors gap-1 group/link"
+          className="inline-flex items-center justify-center min-[380px]:justify-start text-xs font-bold text-navy-950 hover:text-crimson-600 transition-colors gap-1 group/link"
         >
           <span>View Coaching Batch</span>
           <ArrowRight className="w-3.5 h-3.5 text-navy-900 group-hover/link:translate-x-0.5 transition-transform" />
@@ -96,7 +96,7 @@ export const ExamCard = ({ exam }) => {
 
         <button
           onClick={() => handleOpen(exam.slug || exam.id)}
-          className="px-3.5 py-1.5 rounded-lg bg-crimson-600 hover:bg-crimson-700 active:scale-95 text-white font-bold text-xs shadow transition-all flex items-center gap-1 border border-crimson-500"
+          className="w-full min-[380px]:w-auto justify-center px-3.5 py-1.5 rounded-lg bg-crimson-600 hover:bg-crimson-700 active:scale-95 text-white font-bold text-xs shadow transition-all flex items-center gap-1 border border-crimson-500"
         >
           <Sparkles className="w-3.5 h-3.5 text-amber-300" />
           <span>Enquire</span>

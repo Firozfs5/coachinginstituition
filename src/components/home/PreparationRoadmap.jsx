@@ -36,7 +36,7 @@ export const PreparationRoadmap = () => {
           {PREPARATION_STEPS.map((step) => {
             const IconComponent = iconMap[step.icon] || CheckCircle2;
             return (
-              <div key={step.step} className="min-w-[80vw] sm:min-w-[300px] md:min-w-0">
+              <div key={step.step} className="min-w-0">
                 <div 
                   className="p-6 rounded-2xl bg-white border border-slate-200 shadow-card hover:shadow-card-hover transition-all duration-300 relative group h-full"
                 >

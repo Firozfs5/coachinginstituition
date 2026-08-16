@@ -24,7 +24,7 @@ export const ResultsPreview = () => {
             const batch = item.batch || item.batchType;
 
             return (
-              <div key={item.id} className="min-w-[80vw] sm:min-w-[280px] md:min-w-0">
+              <div key={item.id} className="min-w-0">
                 <div
                   className="bg-white rounded-2xl p-6 border border-slate-200 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 h-full"
                 >

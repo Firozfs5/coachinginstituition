@@ -22,14 +22,14 @@ export const CourseCard = ({ course }) => {
   const targets = course.targetExams || [];
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200/90 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between group overflow-hidden hover:-translate-y-1">
+    <div className="bg-white rounded-2xl border border-slate-200/90 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between group overflow-hidden hover:-translate-y-1 h-full">
       {/* Top Banner with Badge */}
-      <div className="p-6 pb-4">
-        <div className="flex items-center justify-between gap-2 mb-3">
-          <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-bold bg-navy-50 text-navy-800 border border-navy-200">
+      <div className="p-5 sm:p-6 pb-4">
+        <div className="flex items-center justify-between gap-2 mb-3 min-w-0">
+          <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-bold bg-navy-50 text-navy-800 border border-navy-200 min-w-0 max-w-[62%] truncate">
             {course.badge || 'Classroom Coaching'}
           </span>
-          <span className="text-[11px] font-semibold text-slate-500 flex items-center gap-1">
+          <span className="text-[11px] font-semibold text-slate-500 flex items-center gap-1 shrink-0">
             <Clock className="w-3.5 h-3.5 text-amber-500" />
             {course.duration}
           </span>
@@ -91,10 +91,10 @@ export const CourseCard = ({ course }) => {
       </div>
 
       {/* Card Action Footer */}
-      <div className="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between gap-3">
+      <div className="p-4 bg-slate-50 border-t border-slate-100 flex flex-col min-[380px]:flex-row min-[380px]:items-center justify-between gap-3">
         <Link
           to={`/courses/${slug}`}
-          className="inline-flex items-center text-xs font-bold text-navy-950 hover:text-crimson-600 transition-colors gap-1 group/btn"
+          className="inline-flex items-center justify-center min-[380px]:justify-start text-xs font-bold text-navy-950 hover:text-crimson-600 transition-colors gap-1 group/btn"
         >
           <span>View Course</span>
           <ArrowRight className="w-3.5 h-3.5 text-navy-900 group-hover/btn:translate-x-1 transition-transform" />
@@ -102,7 +102,7 @@ export const CourseCard = ({ course }) => {
 
         <button
           onClick={() => handleOpen(slug)}
-          className="px-3.5 py-1.5 rounded-lg bg-crimson-600 hover:bg-crimson-700 active:scale-95 text-white font-bold text-xs shadow transition-all flex items-center gap-1.5 border border-crimson-500"
+          className="w-full min-[380px]:w-auto justify-center px-3.5 py-1.5 rounded-lg bg-crimson-600 hover:bg-crimson-700 active:scale-95 text-white font-bold text-xs shadow transition-all flex items-center gap-1.5 border border-crimson-500"
         >
           <Sparkles className="w-3.5 h-3.5 text-amber-300" />
           <span>Enquire Now</span>

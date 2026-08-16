@@ -54,7 +54,7 @@ export const WhyChooseHassanamba = () => {
           {WHY_CHOOSE_PILLARS.map((pillar) => {
             const IconComponent = iconMap[pillar.icon] || CheckCircle2;
             return (
-              <div key={pillar.id} className="min-w-[80vw] sm:min-w-[280px] md:min-w-0">
+              <div key={pillar.id} className="min-w-0">
                 <div 
                   className="p-6 rounded-2xl bg-navy-900/90 border border-navy-800 hover:border-amber-400/40 shadow-card hover:shadow-2xl transition-all duration-300 group hover:-translate-y-1 h-full"
                 >
